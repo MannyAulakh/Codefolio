@@ -1,0 +1,29 @@
+[
+  {
+    "education": "Bachelors of Science in Computer Science",
+    "experience": "2 years of experience in web development",
+    "portfolio_website": "https://www.linkedin.com/in/lee-9b5b3b1a2/",
+    "project1": "Weather App",
+    "project2": "Discord bot for UofT",
+    "project3": "Tic Tac Toe",
+    "user_id": 1
+  },
+  {
+    "education": "Bachelors of Science in Computer Science",
+    "experience": "5 years of experience in web development",
+    "portfolio_website": "https://www.linkedin.com/in/mandeep-9b5b3b1a2/",
+    "project1": "Note taking app",
+    "project2": "Discord bot for Public Health",
+    "project3": "Open AI",
+    "user_id": 2
+  },
+  {
+   "education": "Bachelors of Science in Computer Science",
+    "experience": "15 years of experience in web development",
+    "portfolio_website": "https://www.linkedin.com/in/jocelyn-9b5b3b1a2/",
+    "project1": "Rover",
+    "project2": "Discord music bot",
+    "project3": "French Fry rating app",
+    "user_id": 3
+  }
+]
