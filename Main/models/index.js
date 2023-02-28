@@ -1,7 +1,20 @@
 const User = require('./User');
-//ADD MODEL
+const Post = require('./Post');
+const Profile = require('./Profile');
 
+User.hasMany(Post, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
-//ADD RELATIONS
+Post.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
-module.exports = { User };
+Profile.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+module.exports = { User, Post, Profile };
