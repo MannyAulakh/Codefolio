@@ -1,0 +1,22 @@
+<section id="bio">
+  <h2>{{First}} {{Last}}</h2>
+  <p>{{eduction}}</p>
+  <p>{{experience}}</p>
+  <a herf="{{portfoliolink}}">{{portfoliolink}}</a>
+</section>
+
+<section id="content" class="container">
+  <section id="projects">
+    {{#each}}
+      <div>{{projects array}}</div>
+    {{/each}}
+  </section>
+  <section id="posts">
+    {{#each}}
+      <div id="userPosts">
+        <h3>{{title}}</h3>
+        <p>{{content}}</p>
+      </div>
+    {{/each}}
+  </section>
+</section>
