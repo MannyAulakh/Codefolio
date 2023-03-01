@@ -1,16 +1,22 @@
 [
   {
-    "username": "Lee",
+    "username": "LZ",
+    "firstname": "Lee",
+    "lastname": "Zhang",
     "email": "lee@hotmail.com",
     "password": "password12345"
   },
   {
-    "username": "Mandeep",
+    "username": "MA",
+    "firstname": "Mandeep",
+    "lastname": "Aulakh",
     "email": "mandeep@gmail.com",
     "password": "password12345"
   },
   {
-    "username": "Jocelyn",
+    "username": "JC",
+    "firstname": "Jocelyn",
+    "lastname": "Chiu",
     "email": "jocelyn@uoft.com",
     "password": "password12345"
   }

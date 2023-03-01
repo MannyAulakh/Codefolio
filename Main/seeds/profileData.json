@@ -1,6 +1,7 @@
 [
   {
     "education": "Bachelors of Science in Computer Science",
+    "occupation": "Software Engineer",
     "experience": "2 years of experience in web development",
     "portfolio_website": "https://www.linkedin.com/in/lee-9b5b3b1a2/",
     "project1": "Weather App",
@@ -10,6 +11,7 @@
   },
   {
     "education": "Bachelors of Science in Computer Science",
+    "occupation": "Software Engineer",
     "experience": "5 years of experience in web development",
     "portfolio_website": "https://www.linkedin.com/in/mandeep-9b5b3b1a2/",
     "project1": "Note taking app",
@@ -19,6 +21,7 @@
   },
   {
    "education": "Bachelors of Science in Computer Science",
+    "occupation": "Software Engineer",
     "experience": "15 years of experience in web development",
     "portfolio_website": "https://www.linkedin.com/in/jocelyn-9b5b3b1a2/",
     "project1": "Rover",
