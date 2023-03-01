@@ -1,15 +1,22 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Profile } = require('../../models');
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const userData = await User.create(req.body, { fields: ['email', 'firstname', 'lastname', 'username', 'password'] });
+    const row =  await User.findOne( { where: { email: req.body.email } });
+    const id = row.id;
+    const profileData = await Profile.create({...req.body, user_id: id}, { fields: ['occupation', 'education', 'experience', 'portfolio_website', 'project1', 'project2', 'project3', 'user_id']});
+    console.log(profileData);
+   
+    const data = { ...userData, ...profileData };
 
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(200).json("User created");
+
     });
   } catch (err) {
     res.status(400).json(err);
