@@ -1,22 +1,71 @@
-<section id="bio">
-  <h2>{{First}} {{Last}}</h2>
-  <p>{{eduction}}</p>
-  <p>{{experience}}</p>
-  <a herf="{{portfoliolink}}">{{portfoliolink}}</a>
+{{!-- <section id="bio" class="d-flex justify-content-center">
+  <div class="container text-center">
+    <h2>{{user.firstname}} {{user.lastname}}</h2>
+    <p>{{user.profile.eduction}}</p>
+    <p>{{user.profile.experience}}</p>
+    <a
+      href="{{user.profile.portfolio_website}}"
+    >{{user.profile.portfolio_website}}</a>
+  </div>
 </section>
 
 <section id="content" class="container">
-  <section id="projects">
-    {{#each}}
-      <div>{{projects array}}</div>
-    {{/each}}
+  <section id="projects" class="d-flex justify-content-around m-3">
+    {{#if user.profile.project1}}
+      <div>{{user.profile.project1}}</div>
+    {{/if}}
+    {{#if user.profile.project2}}
+      <div>{{user.profile.project2}}</div>
+    {{/if}}
+    {{#if user.profile.project3}}
+      <div>{{user.profile.project3}}</div>
+    {{/if}}
   </section>
-  <section id="posts">
-    {{#each}}
+  
+  <section id="posts" class="card p-3">
+    {{#each user.posts as |post|}}
       <div id="userPosts">
-        <h3>{{title}}</h3>
-        <p>{{content}}</p>
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
       </div>
     {{/each}}
+  </section>
+</section> --}}
+
+<section class="row">
+  {{!-- user bio --}}
+  <section id="bio" class="col-md-12 col-lg-3">
+    <div class="container text-center">
+      <h2>{{user.firstname}} {{user.lastname}}</h2>
+      <p>{{user.profile.education}}</p>
+      <p>{{user.profile.experience}}</p>
+      <a
+        href="{{user.profile.portfolio_website}}"
+      >{{user.profile.portfolio_website}}</a>
+    </div>
+  </section>
+
+{{!-- main content(projects and blog posts) --}}
+  <section id="content" class="container .col-md-12 col-9 pt-4">
+    <section id="projects" class="d-flex justify-content-around m-3">
+      {{#if user.profile.project1}}
+        <div>{{user.profile.project1}}</div>
+      {{/if}}
+      {{#if user.profile.project2}}
+        <div>{{user.profile.project2}}</div>
+      {{/if}}
+      {{#if user.profile.project3}}
+        <div>{{user.profile.project3}}</div>
+      {{/if}}
+    </section>
+
+    <section id="posts" class="card p-3">
+      {{#each user.posts as |post|}}
+        <div id="userPosts">
+          <h3>{{post.title}}</h3>
+          <p>{{post.content}}</p>
+        </div>
+      {{/each}}
+    </section>
   </section>
 </section>
