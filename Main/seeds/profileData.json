@@ -5,8 +5,11 @@
     "experience": "2 years of experience in web development",
     "portfolio_website": "https://www.linkedin.com/in/lee-9b5b3b1a2/",
     "project1": "Weather App",
+    "project1_link": "https://weatherApp",
     "project2": "Discord bot for UofT",
+    "project2_link": "http:discordBotforUofT",
     "project3": "Tic Tac Toe",
+    "project3_link": "https://TicTacToe",
     "user_id": 1
   },
   {
@@ -15,18 +18,24 @@
     "experience": "5 years of experience in web development",
     "portfolio_website": "https://www.linkedin.com/in/mandeep-9b5b3b1a2/",
     "project1": "Note taking app",
+    "project1_link": "https://noteTakingApp",
     "project2": "Discord bot for Public Health",
+    "project2_link": "https://DiscordBotForPublicHealth",
     "project3": "Open AI",
+    "project3_link": "https://OpenAI",
     "user_id": 2
   },
   {
-   "education": "Bachelors of Science in Computer Science",
+    "education": "Bachelors of Science in Computer Science",
     "occupation": "Software Engineer",
     "experience": "15 years of experience in web development",
     "portfolio_website": "https://www.linkedin.com/in/jocelyn-9b5b3b1a2/",
     "project1": "Rover",
+    "project1_link": "https://Rover",
     "project2": "Discord music bot",
+    "project2_link": "https://DiscordMusicBot",
     "project3": "French Fry rating app",
+    "project3_link": "https://FrenchFryRatingApp",
     "user_id": 3
   }
 ]

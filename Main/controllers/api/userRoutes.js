@@ -6,8 +6,10 @@ router.post('/signup', async (req, res) => {
     const userData = await User.create(req.body, { fields: ['email', 'firstname', 'lastname', 'username', 'password'] });
     const row =  await User.findOne( { where: { email: req.body.email } });
     const id = row.id;
-    const profileData = await Profile.create({...req.body, user_id: id}, { fields: ['occupation', 'education', 'experience', 'portfolio_website', 'project1', 'project2', 'project3', 'user_id']});
-    console.log(profileData);
+
+    console.log(req.body);
+    const profileData = await Profile.create({...req.body, user_id: id}, { fields: ['occupation', 'education', 'experience', 'portfolio_website', 'project1', 'project1_link', 'project2',  'project2_link','project3','project3_link', 'user_id']});
+ 
    
     const data = { ...userData, ...profileData };
 
