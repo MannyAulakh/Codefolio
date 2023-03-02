@@ -4,8 +4,7 @@ const withAuth = require('../utils/auth');
 const sequelize = require('../config/connection');
 
 
-// displaying the blogs and 1 comment 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all Posts and JOIN with user data
     // const postData = await Post.findAll({
@@ -29,12 +28,17 @@ router.get('/', async (req, res) => {
     // Pass serialized data and session flag into template
     res.render('homepage', {
       Posts,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      userID: req.session.user_id,
+      user
+
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+
 
 
 router.get('/login', (req, res) => {
@@ -45,6 +49,10 @@ router.get('/login', (req, res) => {
   }
 
   res.render("login");
+});
+
+router.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
 

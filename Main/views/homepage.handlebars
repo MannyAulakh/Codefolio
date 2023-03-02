@@ -1,18 +1,19 @@
 
-
-<div class = "container">
+{{#if logged_in}}
     <div class = "row justify-content-center">
-        <div class="col-12 col-lg-9 center-block ">
+        <div class="col-12 col-lg-2">
 <!--Profile Section-->
             <div class="card card-left1 mb-4">
                 <!--<img src="img/photo-1455448972184-de647495d428.jpg" alt="" class="card-img-top img-fluid">-->
                 <div class="card-body text-center ">
                     <!--<img src="img/avatar-dhg.png" alt="img" width="120px" height="120px" class="rounded-circle mt-n5">-->
-                    <h5 class="card-title">"USER's NAME"</h5>
-                    <p class="card-text justify-content-center">"USER's TEXT"</p>
+                    <h5 class="card-title">{{user.firstname}} {{user.lastname}}</h5>
+                    <p class="card-text justify-content-center">{{user.username}}</p>
                 </div>
             </div>
+        </div>
 <!--Feed-->
+        <div class="col-12 col-lg-6">
             <div class="middle-column">
                 <div class="card">
                     <div class="card-body">
@@ -22,9 +23,9 @@
                             <div class="media-body">
                                 <h5>{{Post.post_title}}</h5>
                                 <p class="card-text text-justify">{{Post.post_content}}</p>
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-6 p-1 text-center">
-                                        <img src="img/adventure-alps-clouds-2259810.jpg" alt="" class="img-fluid mb-2" />
+                                <div class="card-text text-justify">
+                                    <div class="justify-content-center">
+                                        <img src="https://disabilityin.org/wp-content/uploads/2019/07/JORD2225_WM-1200x800.jpg" alt="" class="img-fluid mb-2" />
                                     </div>
                                 </div>
                                 <small class="text-end">{{format_date Post.post_date_created}}</small>
@@ -54,5 +55,30 @@
                 </div>
             </div>
         </div>
+<!--Post-->
+        <div class="col-12 col-lg-4">
+            <div class="middle-column">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Create a Post!</h5>
+                        <form class="form signup-form">
+                        <div class="form-group">
+                        <label for="name-signup">Title:</label>
+                        <input class="form-input" type="text" id="Post-name" />
+                        </div>
+                        <div class="form-group">
+                        <label for="name-signup">Content:</label>
+                        <textarea class="form-input" type="text" id="Post-desc"></textarea>
+                        </div>
+                        </form>
+                        <button data-id='{{userID}}' id="Post" >Post</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+{{else}}
+    <a href="/login">You must login first to view this page</a>
+{{/if}}
+
+<script src="./js/homepage.js"></script>

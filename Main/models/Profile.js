@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Profile extends Model {}
 
@@ -26,18 +26,34 @@ Profile.init(
     portfolio_website: {
       type: DataTypes.STRING,
       allowNull: false,
+
     },
     project1: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    project1_link: {
+      type: DataTypes.STRING,
+      allowNull: false,
+
+    },
     project2: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    project2_link: {
+      type: DataTypes.STRING,
+      allowNull: false,
+
+    },
     project3: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    project3_link: {
+      type: DataTypes.STRING,
+      allowNull: false,
+
     },
     // date_created: {
     //   type: DataTypes.DATE,
@@ -48,17 +64,17 @@ Profile.init(
       type: DataTypes.INTEGER,
       unique: true,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
+    },
   },
-},
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'profile',
+    modelName: "profile",
   }
 );
 
