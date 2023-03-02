@@ -26,7 +26,9 @@ Profile.init(
     portfolio_website: {
       type: DataTypes.STRING,
       allowNull: false,
-
+      validate: {
+        isUrl: true,
+      },
     },
     project1: {
       type: DataTypes.STRING,
@@ -35,7 +37,9 @@ Profile.init(
     project1_link: {
       type: DataTypes.STRING,
       allowNull: false,
-
+      validate: {
+        isUrl: true,
+      },
     },
     project2: {
       type: DataTypes.STRING,
@@ -44,7 +48,9 @@ Profile.init(
     project2_link: {
       type: DataTypes.STRING,
       allowNull: false,
-
+      validate: {
+        isUrl: true,
+      },
     },
     project3: {
       type: DataTypes.STRING,
@@ -53,7 +59,9 @@ Profile.init(
     project3_link: {
       type: DataTypes.STRING,
       allowNull: false,
-
+      validate: {
+        isUrl: true,
+      },
     },
     // date_created: {
     //   type: DataTypes.DATE,

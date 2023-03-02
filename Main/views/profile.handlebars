@@ -33,7 +33,7 @@
 </section> --}}
 
 <section class="row">
-  {{!-- user bio --}}
+  {{! user bio }}
   <section id="bio" class="col-md-12 col-lg-3">
     <div class="container text-center">
       <h2>{{user.firstname}} {{user.lastname}}</h2>
@@ -45,20 +45,23 @@
     </div>
   </section>
 
-{{!-- main content(projects and blog posts) --}}
+  {{! main content(projects and blog posts) }}
   <section id="content" class="container .col-md-12 col-9 pt-4">
+    <h5>Project Highlights</h5>
     <section id="projects" class="d-flex justify-content-around m-3">
       {{#if user.profile.project1}}
-        <div>{{user.profile.project1}}</div>
+        <a href="{{user.profile.project1_link}}">{{user.profile.project1}}</a>
       {{/if}}
       {{#if user.profile.project2}}
-        <div>{{user.profile.project2}}</div>
+        <a href="{{user.profile.project2_link}}">{{user.profile.project2}}</a>
       {{/if}}
       {{#if user.profile.project3}}
-        <div>{{user.profile.project3}}</div>
+        <a href="{{user.profile.project3_link}}">{{user.profile.project3}}</a>
       {{/if}}
     </section>
+    <hr/>
 
+    <h5>Posts</h5>
     <section id="posts" class="card p-3">
       {{#each user.posts as |post|}}
         <div id="userPosts">
