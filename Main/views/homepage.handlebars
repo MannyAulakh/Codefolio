@@ -24,11 +24,27 @@
                                 <p class="card-text text-justify">{{Post.post_content}}</p>
                                 <div class="row no-gutters mb-3">
                                     <div class="col-6 p-1 text-center">
-                                        <img src="img/adventure-alps-clouds-2259810.jpg" alt="" class="img-fluid mb-2">
+                                        <img src="img/adventure-alps-clouds-2259810.jpg" alt="" class="img-fluid mb-2" />
                                     </div>
                                 </div>
-                                <small>{{Post.post_date_created}}</small>
-                                <p>{{Post.comment_content}}</p>
+                                <small class="text-end">{{format_date Post.post_date_created}}</small>
+                               
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <p>{{Post.comment_content}}</p>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="25"
+                                                    height="25" />
+                                                <p class="small mb-0 ms-2">&nbsp; {{Post.comment_username}}</p>
+                                            </div>
+                                            <div class="d-flex flex-row align-items-center">
+                                                <p class="small text-muted mb-0">{{format_date Post.post_date_created}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
                             
                         </div>
