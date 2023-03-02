@@ -16,19 +16,21 @@
             <div class="middle-column">
                 <div class="card">
                     <div class="card-body">
-                        {{#each Posts as |Posts|}}
+                        {{#each Posts as |Post|}}
                         <div class="media">
                             <!--<img src="img/avatar-dhg.png" alt="img" width="55px" height="55px" class="rounded-circle mr-3">-->
                             <div class="media-body">
-                                <h5>{{Posts.title}}</h5>
-                                <p class="card-text text-justify">{{Posts.content}}</p>
+                                <h5>{{Post.post_title}}</h5>
+                                <p class="card-text text-justify">{{Post.post_content}}</p>
                                 <div class="row no-gutters mb-3">
                                     <div class="col-6 p-1 text-center">
                                         <img src="img/adventure-alps-clouds-2259810.jpg" alt="" class="img-fluid mb-2">
                                     </div>
                                 </div>
-                                <small>{{Posts.date_created}}</small>
+                                <small>{{Post.post_date_created}}</small>
+                                <p>{{Post.comment_content}}</p>
                             </div>
+                            
                         </div>
                         <hr>
                         {{/each}}
