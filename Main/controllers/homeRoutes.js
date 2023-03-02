@@ -6,24 +6,16 @@ const sequelize = require('../config/connection');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    // Get all Posts and JOIN with user data
-    // const postData = await Post.findAll({
-    //   // include: [
-    //   //   {
-    //   //     model: User,
-    //   //     attributes: ['name'],
-    //   //   },
-    //   // ],
-    // });
 
-    // console.log(results);
     const [results, metadata] = await sequelize.query("SELECT post_title, post_content, post_date_created, post_username, comment_content, comment_date_created, username AS comment_username FROM(SELECT post.id AS post_id, user.id AS user_id, title AS post_title, post.content AS post_content, post.date_created AS post_date_created, user.username AS post_username, comment.content AS comment_content, comment.date_created AS comment_date_created, comment.user_id AS comment_user_id FROM post JOIN user ON post.user_id = user.id JOIN comment ON post.id = comment.post_id) AS post_comment_user JOIN user ON post_comment_user.comment_user_id = user.id");
-    // console.log(results);
     const Posts = results;
-    // console.log(Posts);
-    // Serialize data so the template can read it
-    // const Posts = postData.map((post) => post.get({ plain: true }));
-    // results = results.map((result) => result.get({ plain: true }));
+
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] }
+    });
+    
+    // const user = userData.map((user) => user.get({ plain: true }));
+    const user = userData.get({ plain: true });
 
     // Pass serialized data and session flag into template
     res.render('homepage', {
