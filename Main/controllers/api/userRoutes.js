@@ -10,9 +10,6 @@ router.post('/signup', async (req, res) => {
 
     console.log(req.body);
     const profileData = await Profile.create({...req.body, user_id: id}, { fields: ['occupation', 'education', 'experience', 'portfolio_website', 'project1', 'project1_link', 'project2',  'project2_link','project3','project3_link', 'user_id']});
- 
-   
-    const data = { ...userData, ...profileData };
 
     req.session.save(() => {
       req.session.user_id = userData.id;

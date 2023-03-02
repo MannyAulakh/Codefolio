@@ -35,7 +35,6 @@ Profile.init(
     project1_link: {
       type: DataTypes.STRING,
       allowNull: false,
-
     },
     project2: {
       type: DataTypes.STRING,
@@ -44,7 +43,6 @@ Profile.init(
     project2_link: {
       type: DataTypes.STRING,
       allowNull: false,
-
     },
     project3: {
       type: DataTypes.STRING,

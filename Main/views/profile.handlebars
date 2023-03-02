@@ -41,7 +41,7 @@
       <p>{{user.profile.experience}}</p>
       <a
         href="{{user.profile.portfolio_website}}"
-      >{{user.profile.portfolio_website}}</a>
+      >See My portfolio</a>
     </div>
   </section>
 
@@ -49,13 +49,13 @@
   <section id="content" class="container .col-md-12 col-9 pt-4">
     <section id="projects" class="d-flex justify-content-around m-3">
       {{#if user.profile.project1}}
-        <div>{{user.profile.project1}}</div>
+        <div><a href="{{user.profile.project1_link}}">{{user.profile.project1}}</a></div>
       {{/if}}
       {{#if user.profile.project2}}
-        <div>{{user.profile.project2}}</div>
+      <div><a href="{{user.profile.project2_link}}">{{user.profile.project2}}</a></div>
       {{/if}}
       {{#if user.profile.project3}}
-        <div>{{user.profile.project3}}</div>
+      <div><a href="{{user.profile.project3_link}}">{{user.profile.project3}}</a></div>
       {{/if}}
     </section>
 

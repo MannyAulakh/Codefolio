@@ -28,7 +28,27 @@
                                         <img src="https://disabilityin.org/wp-content/uploads/2019/07/JORD2225_WM-1200x800.jpg" alt="" class="img-fluid mb-2" />
                                     </div>
                                 </div>
-                                <small class="text-end">{{format_date Post.post_date_created}}</small>
+                                <div><small class="text-end">{{format_date Post.post_date_created}}</small></div>
+                              
+                                <div class="reaction-container"><!-- container div for reaction system -->
+                                    <span class="reaction-btn"> <!-- Default like button -->
+                                        <span class="reaction-btn-emo like-btn-default"></span> <!-- Default like button emotion-->
+                                        <span class="reaction-btn-text">Like</span> <!-- Default like button text,(Like, wow, sad..) default:Like  -->
+                                        <ul class="emojies-box"> <!-- Reaction buttons container-->
+                                            <li class="emoji emo-like" data-reaction="Like"></li>
+                                            <li class="emoji emo-love" data-reaction="Love"></li>
+                                            <li class="emoji emo-haha" data-reaction="HaHa"></li>
+                                            <li class="emoji emo-wow" data-reaction="Wow"></li>
+                                            <li class="emoji emo-sad" data-reaction="Sad"></li>
+                                            <li class="emoji emo-angry" data-reaction="Angry"></li>
+                                        </ul>
+                                    </span>
+                                    <div class="like-stat"> <!-- Like statistic container-->
+                                        <span class="like-emo"> <!-- like emotions container -->
+                                            <span class="like-btn-like"></span> <!-- given emotions like, wow, sad (default:Like) -->
+                                        </span>
+                                    </div>
+                                </div>
                                
                                 <div class="card mb-4">
                                     <div class="card-body">
