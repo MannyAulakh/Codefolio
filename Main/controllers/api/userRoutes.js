@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Profile } = require('../../models');
+const mailer = require("../../utils/mailer")
 
 router.post('/signup', async (req, res) => {
   try {
@@ -19,7 +20,10 @@ router.post('/signup', async (req, res) => {
 
       res.status(200).json("User created");
 
-    });
+    })
+    
+    mailer(req.body.email)
+    
   } catch (err) {
     res.status(400).json(err);
   }
