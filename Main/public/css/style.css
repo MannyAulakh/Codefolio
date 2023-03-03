@@ -1,5 +1,11 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+:root{
+  --title: #606060;
+  --text: #828282;
+  --primary: #008db8;
+}
+
+body{
+  background-color: #f5f8fa;
 }
 
 .no-button {
@@ -17,8 +23,36 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+.custom-header-bg {
+  background-color: #008db8;
+}
+
+header a {
+  color: white;
+}
+
+.custom-mx {
+  margin-left: 10%;
+  margin-right:10%;
+}
+
+.custom-color-title{
+  color: var(--title);
+}
+
+.custom-color-text{
+  color: var(--text);
+}
+
+.custom-color-icon{
+  opacity: 50%;
+}
+
+.custom-button{
+  background: var(--primary);
+  color: white;
+}
+
+.custom-border{
+  border-color: #cccccc;
 }

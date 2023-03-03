@@ -1,75 +1,47 @@
-{{!-- <section id="bio" class="d-flex justify-content-center">
-  <div class="container text-center">
-    <h2>{{user.firstname}} {{user.lastname}}</h2>
-    <p>{{user.profile.eduction}}</p>
-    <p>{{user.profile.experience}}</p>
-    <a
-      href="{{user.profile.portfolio_website}}"
-    >{{user.profile.portfolio_website}}</a>
-  </div>
-</section>
-
-<section id="content" class="container">
-  <section id="projects" class="d-flex justify-content-around m-3">
-    {{#if user.profile.project1}}
-      <div>{{user.profile.project1}}</div>
-    {{/if}}
-    {{#if user.profile.project2}}
-      <div>{{user.profile.project2}}</div>
-    {{/if}}
-    {{#if user.profile.project3}}
-      <div>{{user.profile.project3}}</div>
-    {{/if}}
-  </section>
-  
-  <section id="posts" class="card p-3">
-    {{#each user.posts as |post|}}
-      <div id="userPosts">
-        <h3>{{post.title}}</h3>
-        <p>{{post.content}}</p>
-      </div>
-    {{/each}}
-  </section>
-</section> --}}
-
-<section class="row">
+<section class="row d-flex flex-row justify-content-around">
   {{! user bio }}
-  <section id="bio" class="col-md-12 col-lg-3">
-    <div class="container text-center">
+  <section id="bio" class="col-12 col-lg-3">
+    <div class="card-body text-center p-5 bg-white border-0 rounded-md">
+      <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="50%"
+        class="py-4 custom-color-icon" />
       <h2>{{user.firstname}} {{user.lastname}}</h2>
-      <p>{{user.profile.education}}</p>
-      <p>{{user.profile.experience}}</p>
-      <a
-        href="{{user.profile.portfolio_website}}"
-      >See My portfolio</a>
+      <p class="custom-color-text">{{user.profile.education}}</p>
+      <p class="custom-color-text">{{user.profile.experience}}</p>
+      <a href="{{user.profile.portfolio_website}}">{{user.profile.portfolio_website}}</a>
     </div>
   </section>
 
   {{! main content(projects and blog posts) }}
-  <section id="content" class="container .col-md-12 col-9 pt-4">
-    <h5>Project Highlights</h5>
-    <section id="projects" class="d-flex justify-content-around m-3">
-      {{#if user.profile.project1}}
+  <section id="content" class="container .col-12 col-9">
+    <div class="mb-4 bg-white border-0 rounded-md p-4">
+      <h5>Project Highlights</h5>
+      <hr />
+      <section id="projects" class="d-flex justify-content-around m-3">
+        {{#if user.profile.project1}}
         <a href="{{user.profile.project1_link}}">{{user.profile.project1}}</a>
-      {{/if}}
-      {{#if user.profile.project2}}
+        {{/if}}
+        {{#if user.profile.project2}}
         <a href="{{user.profile.project2_link}}">{{user.profile.project2}}</a>
-      {{/if}}
-      {{#if user.profile.project3}}
+        {{/if}}
+        {{#if user.profile.project3}}
         <a href="{{user.profile.project3_link}}">{{user.profile.project3}}</a>
-      {{/if}}
-    </section>
-    <hr/>
+        {{/if}}
+      </section>
 
-    <h5>Posts</h5>
-    <section id="posts" class="card p-3">
+    </div>
+
+    <div class="mb-4 bg-white border-0 rounded-md p-4">
+      <h5>Posts</h5>
       {{#each user.posts as |post|}}
-        <div id="userPosts">
-          <h3>{{post.title}}</h3>
-          <p>{{post.content}}</p>
-          <img src= "{{post.image_link}}" alt="" class="img-fluid mb-2" />
-        </div>
+      <hr />
+      <div id="userPosts">
+        <p>{{format_date post.date_created}}</p>
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
+        <img src="{{post.image_link}}" alt="" class="img-fluid mb-2" />
+
+      </div>
       {{/each}}
-    </section>
+    </div>
   </section>
 </section>
