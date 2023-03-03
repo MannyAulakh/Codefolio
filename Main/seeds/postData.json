@@ -2,16 +2,19 @@
   {
     "title": "Tactic for hiring the right Software Developer for your company!",
     "content": "Hiring the right software developer is crucial for any business that relies on technology. With the fast-paced nature of the industry and the increasing demand for skilled professionals, it can be challenging to find the right candidate. However, with the right approach, it is possible to find the perfect fit for your team. In this blog post, we will share some tips for hiring a software developer.\n 1.Define your requirements\n Before you start the hiring process, you should have a clear understanding of what you need. This means defining the skills, experience, and qualifications required for the job. Consider the technical and non-technical skills you need and the level of experience required for the role.\n 2.Look for relevant experience\nWhen looking for software developers, it is essential to look for candidates with relevant experience. This means looking for developers who have worked on similar projects to yours, or who have experience working with the tools and technologies you use. Look for developers who have a track record of success and can demonstrate their ability to solve complex problems.",
-     "user_id": 1
+    "image_link": "https://www.talentlms.com/blog/wp-content/uploads/2017/09/TLMS_20170927_1200x628.jpg",
+    "user_id": 1
   },
   {
     "title": "My portfolio website",
     "content": "https://www.iamtamara.design/",
+    "image_link": "https://www.leadquizzes.com/images/website-portfolio-for-developer-1.png",
     "user_id": 2
   },
   {
     "title": "StackOverflow 2022 Developer Survey",
     "content": "https://survey.stackoverflow.co/2022/#technology-most-popular-technologies",
+    "image_link": "https://content.presspage.com/uploads/2658/c800_logo-stackoverflow-square.jpg?98978",
     "user_id": 3
   }
 ]
