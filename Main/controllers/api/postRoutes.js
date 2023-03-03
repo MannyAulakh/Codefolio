@@ -7,6 +7,7 @@ router.post('/', withAuth, async (req, res) => {
         const newPost = await Post.create({
             title: req.body.title,
             content: req.body.content,
+            image_link: req.body.image_link,
             user_id: req.session.user_id,
         });
 

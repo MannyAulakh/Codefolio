@@ -25,10 +25,10 @@
                                 <p class="card-text text-justify">{{Post.post_content}}</p>
                                 <div class="card-text text-justify">
                                     <div class="justify-content-center">
-                                        <img src="https://disabilityin.org/wp-content/uploads/2019/07/JORD2225_WM-1200x800.jpg" alt="" class="img-fluid mb-2" />
+                                        <img src= "{{Post.post_image_link}}" alt="" class="img-fluid mb-2" />
                                     </div>
                                 </div>
-                                <small class="text-end">{{format_date Post.post_date_created}}</small>
+                                <small class="text-end">{{Post.post_date_created}}</small>
                                {{#if Post.comment_content}}
                                 <div class="card mb-4">
                                     <div class="card-body">
@@ -40,7 +40,7 @@
                                                 <p class="small mb-0 ms-2">&nbsp; {{Post.comment_username}}</p>
                                             </div>
                                             <div class="d-flex flex-row align-items-center">
-                                                <p class="small text-muted mb-0">{{format_date Post.post_date_created}}</p>
+                                                <p class="small text-muted mb-0">{{Post.post_date_created}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -71,6 +71,10 @@
                         <div class="form-group">
                         <label for="name-signup">Content:</label>
                         <textarea class="form-input" type="text" id="Post-desc"></textarea>
+                        </div>
+                        <div class="form-group">
+                        <label for="name-signup">Image Link:</label>
+                        <input class="form-input" type="text" id="Post-image"/>
                         </div>
                         </form>
                         <button data-id='{{userID}}' id="Post" >Post</button> 
