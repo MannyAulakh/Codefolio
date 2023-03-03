@@ -22,10 +22,13 @@ router.get('/', withAuth, async (req, res) => {
       },],
     });
 
+
+
     const newData = data.map((post) => post.get({ plain: true }));
 
     var Posts = newData
-
+    
+    console.log(newData);
 
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] }
