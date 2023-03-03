@@ -30,10 +30,18 @@
                                 </div>
                                 <div><small class="text-end">{{format_date Post.post_date_created}}</small></div>
                               
-                                <div class="reaction-container"><!-- container div for reaction system -->
+
+                              
+                                <div style="height: 60px;" class="reaction-container"><!-- container div for reaction system -->
+                                <style scoped>
+                                    @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+                                    @import '/css/style.css';
+                                    @import '/css/reaction.css';
+
+                                </style>
                                     <span class="reaction-btn"> <!-- Default like button -->
-                                        <span class="reaction-btn-emo like-btn-default"></span> <!-- Default like button emotion-->
-                                        <span class="reaction-btn-text">Like</span> <!-- Default like button text,(Like, wow, sad..) default:Like  -->
+                                        {{!-- <span class="reaction-btn-emo like-btn-default"></span> <!-- Default like button emotion--> --}}
+                                        <img class="default-like-button" src="/images/reactions_like.png">&nbsp;<span class="">Like</span> <!-- Default like button text,(Like, wow, sad..) default:Like  -->
                                         <ul class="emojies-box"> <!-- Reaction buttons container-->
                                             <li class="emoji emo-like" data-reaction="Like"></li>
                                             <li class="emoji emo-love" data-reaction="Love"></li>
@@ -43,13 +51,13 @@
                                             <li class="emoji emo-angry" data-reaction="Angry"></li>
                                         </ul>
                                     </span>
-                                    <div class="like-stat"> <!-- Like statistic container-->
+                                    {{!-- <div class="like-stat"> <!-- Like statistic container-->
                                         <span class="like-emo"> <!-- like emotions container -->
                                             <span class="like-btn-like"></span> <!-- given emotions like, wow, sad (default:Like) -->
                                         </span>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                               
+                                 
                                 <div class="card mb-4">
                                     <div class="card-body">
                                         <p>{{Post.comment_content}}</p>
