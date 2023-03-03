@@ -1,4 +1,3 @@
-
 {{#if logged_in}}
     <div class = "row justify-content-center">
         <div class="col-12 col-lg-2">
@@ -28,22 +27,54 @@
                                         <img src= "{{Post.image_link}}" alt="" class="img-fluid mb-2" />
                                     </div>
                                 </div>
-                                <small class="text-end">{{Post.date_created}}</small>
-                               {{#if Post.comments}}
+                            </div>
+                            <div><small class="text-end">{{format_date Post.date_created}}</small></div>
+
+                            <hr>
+
+                            <div style="height: 60px;" class="reaction-container">
+                                <!-- container div for reaction system -->
+                                <style scoped>
+                                    @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+                                    @import '/css/style.css';
+                                    @import '/css/reaction.css';
+                                </style>
+                                <span class="reaction-btn"> <!-- Default like button -->
+                                    {{!-- <span class="reaction-btn-emo like-btn-default"></span>
+                                    <!-- Default like button emotion--> --}}
+                                    <img class="default-like-button" src="/images/reactions_like.png">&nbsp;<span
+                                        class="">Like</span>
+                                    <!-- Default like button text,(Like, wow, sad..) default:Like  -->
+                                    <ul class="emojies-box"> <!-- Reaction buttons container-->
+                                        <li class="emoji emo-like" data-reaction="Like"></li>
+                                        <li class="emoji emo-love" data-reaction="Love"></li>
+                                        <li class="emoji emo-haha" data-reaction="HaHa"></li>
+                                        <li class="emoji emo-wow" data-reaction="Wow"></li>
+                                        <li class="emoji emo-sad" data-reaction="Sad"></li>
+                                        <li class="emoji emo-angry" data-reaction="Angry"></li>
+                                    </ul>
+                                </span>
+                                {{!-- <div class="like-stat"> <!-- Like statistic container-->
+                                    <span class="like-emo"> <!-- like emotions container -->
+                                        <span class="like-btn-like"></span>
+                                        <!-- given emotions like, wow, sad (default:Like) -->
+                                    </span>
+                                </div> --}}
+                            </div>
+                        {{#if Post.comments}}
                                     {{#each Post.comments as |com|}}
-                                    <div class="card mb-4">
-                                        <div class="card-body">
-                                            <p>{{com.content}}</p>
-                                            <div class="d-flex justify-content-between">
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="25"
-                                                        height="25" />
-                                                    <p class="small mb-0 ms-2">&nbsp; {{com.user.username}}</p>
-                                                </div>
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <p class="small text-muted mb-0">{{com.date_created}}</p>
-                                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <p>{{com.content}}</p>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar"
+                                                    width="25" height="25" />
+                                                <p class="small mb-0 ms-2">&nbsp; {{com.user.username}}</p>
                                             </div>
+                                            <div class="d-flex flex-row align-items-center">
+                                                <p class="small text-muted mb-0">{{format_date com.date_created}}</p>
+                                                </div>
                                         </div>
                                     </div>
                                     {{/each}}
@@ -51,24 +82,44 @@
 
                                 {{/if}}
                             </div>
-                            
-                        </div>
                         <hr>
-                        {{/each}}
+                        {{else}}
+                        {{/if}}
+
+                            <div class="bg-white p-2 px-4">
+                            
+                                {{!-- <style scoped>
+                                    @import '/css/commentsstyle.css';
+                                    @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css");
+                                </style>
+                             --}}
+                                <div class=" row d-flex flex-row add-comment-section">
+                                    <img class="img-fluid img-responsive rounded-circle mr-2"
+                                        src="https://pic.onlinewebfonts.com/svg/img_569204.png" width="25">
+                                        <input type="text" class="form-control mr-3" id="comment_entry{{Post.post_id}}" placeholder="Add comment">
+                                        <button class="btn btn-primary ms-5" id="comment_button{{Post.post_id}} {{Post.post_id}}" type="button">Comment</button>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
+                    <hr>
+                    {{/each}}
                 </div>
             </div>
         </div>
-<!--Post-->
-        <div class="col-12 col-lg-4">
-            <div class="middle-column">
-                <div class="card">
-                    <div class="card-body">
-                        <h5>Create a Post!</h5>
-                        <form class="form signup-form">
+    </div>
+    <!--Post-->
+    <div class="col-12 col-lg-4">
+        <div class="middle-column">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Create a Post!</h5>
+                    <form class="form signup-form">
                         <div class="form-group">
-                        <label for="name-signup">Title:</label>
-                        <input class="form-input" type="text" id="Post-name" />
+                            <label for="name-signup">Title:</label>
+                            <input class="form-input" type="text" id="Post-name" />
                         </div>
                         <div class="form-group">
                         <label for="name-signup">Content:</label>
@@ -78,15 +129,16 @@
                         <label for="name-signup">Image Link:</label>
                         <input class="form-input" type="text" id="Post-image"/>
                         </div>
-                        </form>
-                        <button data-id='{{userID}}' id="Post" >Post</button> 
-                    </div>
+                    </form>
+                    <button data-id='{{userID}}' id="Post">Post</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {{else}}
-    <a href="/login">You must login first to view this page</a>
+<a href="/login">You must login first to view this page</a>
 {{/if}}
 
 <script src="./js/homepage.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
