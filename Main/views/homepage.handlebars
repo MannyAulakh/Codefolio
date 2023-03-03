@@ -29,7 +29,7 @@
                                     </div>
                                 </div>
                                 <small class="text-end">{{format_date Post.post_date_created}}</small>
-                               
+                               {{#if Post.comment_content}}
                                 <div class="card mb-4">
                                     <div class="card-body">
                                         <p>{{Post.comment_content}}</p>
@@ -45,7 +45,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+                               {{else}}
+
+                                {{/if}}
                             </div>
                             
                         </div>
