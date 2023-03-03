@@ -20,15 +20,15 @@
                         <div class="media">
                             <!--<img src="img/avatar-dhg.png" alt="img" width="55px" height="55px" class="rounded-circle mr-3">-->
                             <div class="media-body">
-                                <h5>{{Post.post_title}}</h5>
-                                <p class="card-text text-justify">{{Post.post_content}}</p>
+                                <h5>{{Post.title}}</h5>
+                                <p class="card-text text-justify">{{Post.content}}</p>
                                 <div class="card-text text-justify">
                                     <div class="justify-content-center">
-                                        <img src= "{{Post.post_image_link}}" alt="" class="img-fluid mb-2" />
+                                        <img src= "{{Post.image_link}}" alt="" class="img-fluid mb-2" />
                                     </div>
                                 </div>
                             </div>
-                            <div><small class="text-end">{{format_date Post.post_date_created}}</small></div>
+                            <div><small class="text-end">{{format_date Post.date_created}}</small></div>
 
                             <hr>
 
@@ -61,21 +61,26 @@
                                     </span>
                                 </div> --}}
                             </div>
-                        {{#if Post.comment_content}}
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <p>{{Post.comment_content}}</p>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="d-flex flex-row align-items-center">
-                                            <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar"
-                                                width="25" height="25" />
-                                            <p class="small mb-0 ms-2">&nbsp; {{Post.comment_username}}</p>
-                                        </div>
-                                        <div class="d-flex flex-row align-items-center">
-                                            <p class="small text-muted mb-0">{{format_date Post.post_date_created}}</p>
+                        {{#if Post.comments}}
+                                    {{#each Post.comments as |com|}}
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <p>{{com.content}}</p>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar"
+                                                    width="25" height="25" />
+                                                <p class="small mb-0 ms-2">&nbsp; {{com.user.username}}</p>
+                                            </div>
+                                            <div class="d-flex flex-row align-items-center">
+                                                <p class="small text-muted mb-0">{{format_date com.date_created}}</p>
+                                                </div>
                                         </div>
                                     </div>
-                                </div>
+                                    {{/each}}
+                               {{else}}
+
+                                {{/if}}
                             </div>
                         <hr>
                         {{else}}
