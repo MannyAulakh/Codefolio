@@ -28,6 +28,9 @@
                         <textarea class="form-input py-1 px-2 rounded-0" type="text" id="Post-desc"
                             placeholder="Content"></textarea>
                     </div>
+                    <div class="form-group">
+                        <input class="form-input py-1 px-2 rounded-0" placeholder="Image URL" type="text" id="Post-image" />
+                    </div>
                 </form>
                 <div class="text-center">
                     <button data-id="{{userID}}" id="Post" class="border-0 py-1 px-3 custom-button rounded-md">+Post
@@ -130,7 +133,7 @@
             <div class=" row d-flex flex-row add-comment-section">
                 <img class="img-fluid img-responsive rounded-circle mr-2"
                     src="https://pic.onlinewebfonts.com/svg/img_569204.png" width="25">
-                <input type="text" class="form-control mr-3" id="comment_entry{{Post.post_id}}"
+                <input type="text" class="form-control mr-3" id="comment_entry{{Post.id}}"
                     placeholder="Add comment">
                 <button class="btn btn-primary ms-5" id="comment_button{{Post.id}} {{Post.id}}"
                     type="button">Comment</button>
