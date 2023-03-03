@@ -12,22 +12,22 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    <header class="display-flex justify-space-between align-center py-2 px-4 custom-header-bg text-white">
       <h1>
-        <a href="/">Codefolio!</a>
+        <a href="/">&lt;Codefolio&gt;</a>
       </h1>
       <nav>
-        <a href="/">Home</a> |
-        <a href="/profile">Profile</a> |
+        <a href="/" class="px-2">Home</a> |
+        <a href="/profile" class="px-2">Profile</a> |
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <button class="no-button" id="logout">Logout</button>
+        <button class="no-button px-2 text-white" id="logout">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <a href="/login" class="px-2">Login</a>
         {{/if}}
       </nav>
     </header>
-    <main class="container container-fluid mt-5">
+    <main class="custom-mx mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>

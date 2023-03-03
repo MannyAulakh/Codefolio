@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col-md-8">
     <form class="form signup-form">
+
+      {{! signup }}
       <div class="container m-5" id="basicInfo">
         <h2>Signup!</h2>
         <div class="form-group">
@@ -23,8 +25,10 @@
           <label for="password-signup">password:</label>
           <input class="form-input" type="password" id="password-signup" />
         </div>
+        <hr />
       </div>
 
+      {{! about }}
       <div class="container m-5" id="about">
         <h3>Tell me about yourself!</h3>
         <div class="form-group">
@@ -43,8 +47,10 @@
           <label for="portfolio_website-signup">add a link to your portfolio:</label>
           <input class="form-input" type="text" id="portfolio_website-signup" />
         </div>
+        <hr />
       </div>
 
+      {{! projects }}
       <div class="container m-5" id="projects">
         <h3>Share three projects you're proud of!</h3>
 
@@ -77,8 +83,10 @@
           <label for="project3_link-signup">link:</label>
           <input class="form-input" type="text" id="project3_link-signup" />
         </div>
+        <hr />
       </div>
 
+      {{! sign up button }}
       <div class="container m-5">
         <div class="form-group">
           <button class="btn btn-primary" type="submit">Signup</button>

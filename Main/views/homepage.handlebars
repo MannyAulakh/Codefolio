@@ -1,86 +1,99 @@
-
 {{#if logged_in}}
-    <div class = "row justify-content-center">
-        <div class="col-12 col-lg-2">
-<!--Profile Section-->
-            <div class="card card-left1 mb-4">
-                <!--<img src="img/photo-1455448972184-de647495d428.jpg" alt="" class="card-img-top img-fluid">-->
-                <div class="card-body text-center ">
-                    <!--<img src="img/avatar-dhg.png" alt="img" width="120px" height="120px" class="rounded-circle mt-n5">-->
-                    <h5 class="card-title">{{user.firstname}} {{user.lastname}}</h5>
-                    <p class="card-text justify-content-center">{{user.username}}</p>
-                </div>
-            </div>
-        </div>
-<!--Feed-->
-        <div class="col-12 col-lg-6">
-            <div class="middle-column">
-                <div class="card">
-                    <div class="card-body">
-                        {{#each Posts as |Post|}}
-                        <div class="media">
-                            <!--<img src="img/avatar-dhg.png" alt="img" width="55px" height="55px" class="rounded-circle mr-3">-->
-                            <div class="media-body">
-                                <h5>{{Post.post_title}}</h5>
-                                <p class="card-text text-justify">{{Post.post_content}}</p>
-                                <div class="card-text text-justify">
-                                    <div class="justify-content-center">
-                                        <img src="https://disabilityin.org/wp-content/uploads/2019/07/JORD2225_WM-1200x800.jpg" alt="" class="img-fluid mb-2" />
-                                    </div>
-                                </div>
-                                <small class="text-end">{{format_date Post.post_date_created}}</small>
-                               {{#if Post.comment_content}}
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <p>{{Post.comment_content}}</p>
-                                        <div class="d-flex justify-content-between">
-                                            <div class="d-flex flex-row align-items-center">
-                                                <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="25"
-                                                    height="25" />
-                                                <p class="small mb-0 ms-2">&nbsp; {{Post.comment_username}}</p>
-                                            </div>
-                                            <div class="d-flex flex-row align-items-center">
-                                                <p class="small text-muted mb-0">{{format_date Post.post_date_created}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                               {{else}}
-
-                                {{/if}}
-                            </div>
-                            
-                        </div>
-                        <hr>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-        </div>
-<!--Post-->
-        <div class="col-12 col-lg-4">
-            <div class="middle-column">
-                <div class="card">
-                    <div class="card-body">
-                        <h5>Create a Post!</h5>
-                        <form class="form signup-form">
-                        <div class="form-group">
-                        <label for="name-signup">Title:</label>
-                        <input class="form-input" type="text" id="Post-name" />
-                        </div>
-                        <div class="form-group">
-                        <label for="name-signup">Content:</label>
-                        <textarea class="form-input" type="text" id="Post-desc"></textarea>
-                        </div>
-                        </form>
-                        <button data-id='{{userID}}' id="Post" >Post</button> 
-                    </div>
-                </div>
+<div class="row d-flex flex-row justify-content-around">
+    <!--Profile Section-->
+    <div class="col-12 col-lg-3">
+        <div class="card card-left1 mb-4 bg-white border-0 rounded-md">
+            <!--<img src="img/photo-1455448972184-de647495d428.jpg" alt="" class="card-img-top img-fluid">-->
+            <div class="card-body text-center p-4 pb-5">
+                <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="50%"
+                    class="py-4 custom-color-icon" />
+                <h5 class="card-text justify-content-center custom-color-title">{{user.username}}</h5>
+                <h6 class="card-title custom-color-text">{{user.firstname}}
+                    {{user.lastname}}</h6>
             </div>
         </div>
     </div>
+
+    {{! content }}
+    <div class="col-12 col-lg-9">
+        <!--create Post-->
+        <div class="card py-1 px-3 bg-white border-0 rounded-md">
+            <div class="card-body">
+                <h5 class="custom-color-title">Create a New Post!</h5>
+                <form class="form signup-form">
+                    <div class="form-group">
+                        <input class="form-input py-1 px-2 rounded-0" placeholder="Title" type="text" id="Post-name" />
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input py-1 px-2 rounded-0" type="text" id="Post-desc"
+                            placeholder="Content"></textarea>
+                    </div>
+                </form>
+                <div class="text-center">
+                    <button data-id="{{userID}}" id="Post" class="border-0 py-1 px-3 custom-button rounded-md">+Post
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!--Feed-->
+        <h5 class="custom-color-title pt-3">Recent Posts!</h5>
+        {{#each Posts as |Post|}}
+        <div class="card p-4 bg-white border-0 rounded-md my-4">
+            <div class="card-body">
+                {{! user icon, name and date }}
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="30" />
+                        <p class="small mb-0 ms-2 custom-color-title">&nbsp;
+                            {{Post.post_username}}</p>
+                    </div>
+                    <div class="d-flex flex-row align-items-center">
+                        <p class="small text-muted mb-0">{{format_date
+                            Post.post_date_created
+                            }}</p>
+                    </div>
+                </div>
+                <hr />
+                {{! post title and text }}
+                <h5 class="py-2 custom-color-title">{{Post.post_title}}</h5>
+                <p class="card-text text-justify custom-color-text">{{Post.post_content}}</p>
+                <div class="card-text text-justify">
+                    <div class="justify-content-center">
+                        <img src="https://disabilityin.org/wp-content/uploads/2019/07/JORD2225_WM-1200x800.jpg" alt=""
+                            class="img-fluid mb-2" />
+                    </div>
+                </div>
+                {{! post comments }}
+                {{#if Post.comment_content}}
+                <div class="card p-2 my-4 custom-border">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="25"
+                                    height="25" />
+                                <p class="small mb-0 ms-2 custom-color-title">&nbsp;
+                                    {{Post.comment_username}}</p>
+                            </div>
+                            <div class="d-flex flex-row align-items-center">
+                                <p class="small text-muted mb-0">{{format_date
+                                    Post.comment_date_created
+                                    }}</p>
+                            </div>
+                        </div>
+                        <p class="custom-color-text">{{Post.comment_content}}</p>
+                    </div>
+                </div>
+                {{else}}
+                {{/if}}
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
 {{else}}
-    <a href="/login">You must login first to view this page</a>
+<a href="/login">You must login first to view this page</a>
 {{/if}}
 
 <script src="./js/homepage.js"></script>
