@@ -19,7 +19,10 @@ router.get('/', withAuth, async (req, res) => {
           attributes: { exclude: ["password"] },
           plain: true,
         },],
-      },],
+      }, {
+        model: User,
+        plain: true,
+      }],
     });
 
     const newData = data.map((post) => post.get({ plain: true }));

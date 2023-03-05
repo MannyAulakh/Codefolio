@@ -35,8 +35,10 @@
       {{#each user.posts as |post|}}
       <hr />
       <div id="userPosts">
-        <p>{{format_date post.date_created}}</p>
-        <h3>{{post.title}}</h3>
+        <div class="d-flex flex-row justify-content-between align-items-center">
+          <h3>{{post.title}}</h3>
+          <p class="small text-muted mb-0">{{format_date post.date_created}}</p>
+        </div>
         <p>{{post.content}}</p>
         <img src="{{post.image_link}}" alt="" class="img-fluid mb-2" />
 
