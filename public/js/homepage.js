@@ -38,9 +38,6 @@ const newComment = async (button) => {
   const post_id = ids.split(" ")[1];
   console.log(post_id);
 
-  const content = await document.querySelector(`#comment_entry${post_id}`).value.trim();
-  // const content = $(event.target).siblings(".form-control").val().trim();
-
   console.log(JSON.stringify({ content, post_id }));
 
   if (content) {
