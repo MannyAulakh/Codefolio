@@ -13,7 +13,7 @@ body{
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: var(--primary);
   text-decoration: none;
   font-size: 100%;
 }
@@ -24,16 +24,17 @@ body{
 }
 
 .custom-header-bg {
-  background-color: #008db8;
+  background-color: var(--primary);
 }
 
 header a {
   color: white;
 }
 
-.custom-mx {
+.custom-margin {
   margin-left: 10%;
   margin-right:10%;
+  margin-top: 120px;
 }
 
 .custom-color-title{
@@ -55,4 +56,8 @@ header a {
 
 .custom-border{
   border-color: #cccccc;
+}
+
+.custom-font{
+  font-family: monospace, sans-serif;
 }

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog</title>
+  <title>Codefolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -24,9 +24,9 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center py-2 px-4 custom-header-bg text-white">
+    <header class="display-flex justify-space-between align-center py-2 px-4 custom-header-bg text-white fixed-top">
       <h1>
-        <a href="/">&lt;Codefolio&gt;</a>
+        <a href="/" class="ml-3 custom-font">&lt;Codefolio&gt;</a>
       </h1>
       <nav>
         <a href="/" class="px-2">Home</a> |
@@ -39,7 +39,7 @@
         {{/if}}
       </nav>
     </header>
-    <main class="custom-mx mt-5">
+    <main class="custom-margin">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>

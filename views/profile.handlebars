@@ -1,7 +1,7 @@
 <section class="row d-flex flex-row justify-content-around">
   {{! user bio }}
   <section id="bio" class="col-12 col-lg-3">
-    <div class="card-body text-center p-5 bg-white border-0 rounded-md">
+    <div class="card-body text-center p-5 mb-4 bg-white border-0 rounded-md">
       <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="50%"
         class="py-4 custom-color-icon" />
       <h2>{{user.firstname}} {{user.lastname}}</h2>
@@ -12,7 +12,7 @@
   </section>
 
   {{! main content(projects and blog posts) }}
-  <section id="content" class="container .col-12 col-9">
+  <section id="content" class="container col-12 col-lg-9">
     <div class="mb-4 bg-white border-0 rounded-md p-4">
       <h5>Project Highlights</h5>
       <hr />
@@ -35,8 +35,12 @@
       {{#each user.posts as |post|}}
       <hr />
       <div id="userPosts">
-        <p>{{format_date post.date_created}}</p>
-        <h3>{{post.title}}</h3>
+        <div class="d-flex flex-row justify-content-between align-items-center">
+          <h3>{{post.title}}</h3>
+          <p class="small text-muted mb-0">{{format_date
+            post.date_created
+            }}</p>
+        </div>
         <p>{{post.content}}</p>
         <img src="{{post.image_link}}" alt="" class="img-fluid mb-2" />
 

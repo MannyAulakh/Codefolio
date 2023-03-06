@@ -1,8 +1,8 @@
 {{#if logged_in}}
 <div class="row d-flex flex-row justify-content-around">
-    <!--Profile Section-->
+    <!--Profile Section (aside)-->
     <div class="col-12 col-lg-3">
-        <div class="card card-left1 mb-4 bg-white border-0 rounded-md">
+        <div class="card card-left1 mb-4 bg-white border-0 rounded-lg">
             <!--<img src="img/photo-1455448972184-de647495d428.jpg" alt="" class="card-img-top img-fluid">-->
             <div class="card-body text-center p-4 pb-5">
                 <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="50%"
@@ -16,40 +16,50 @@
 
     {{! content }}
     <div class="col-12 col-lg-9">
-        <!--create Post-->
-        <div class="card py-1 px-3 bg-white border-0 rounded-md">
+        <!--create new Post-->
+        <div class="card py-1 px-3 bg-white border-0 rounded-lg">
             <div class="card-body">
                 <h5 class="custom-color-title">Create a New Post!</h5>
                 <form class="form signup-form">
                     <div class="form-group">
-                        <input class="form-input py-1 px-2 rounded-0" placeholder="Title" type="text" id="Post-name" />
+                        <input class="form-input py-1 px-2 rounded-sm" placeholder="Title" type="text" id="Post-name" />
                     </div>
                     <div class="form-group">
-                        <textarea class="form-input py-1 px-2 rounded-0" type="text" id="Post-desc"
+                        <textarea class="form-input py-1 px-2 rounded-sm" type="text" id="Post-desc"
                             placeholder="Content"></textarea>
                     </div>
                     <div class="form-group">
+<<<<<<< HEAD
                         <input class="form-input py-1 px-2 rounded-0" placeholder="Image URL" type="text"
+=======
+                        <input class="form-input py-1 px-2 rounded-sm" placeholder="Image URL" type="text"
+>>>>>>> main
                             id="Post-image" />
                     </div>
                 </form>
                 <div class="text-center">
-                    <button data-id="{{userID}}" id="Post" class="border-0 py-1 px-3 custom-button rounded-md">+Post
+                    <button data-id="{{userID}}" id="Post" class="border-0 py-1 px-3 custom-button rounded-lg">+Post
                     </button>
                 </div>
             </div>
         </div>
+
         <!--Feed-->
         <h5 class="custom-color-title pt-3">Recent Posts!</h5>
         {{#each Posts as |Post|}}
-        <div class="card p-4 bg-white border-0 rounded-md my-4">
+        <div class="card pt-4 px-4 bg-white border-0 rounded-lg mt-4">
             <div class="card-body">
                 {{! user icon, name and date }}
                 <div class="d-flex justify-content-between">
                     <div class="d-flex flex-row align-items-center">
                         <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="30" />
+<<<<<<< HEAD
                         <p class="small mb-0 ms-2 custom-color-title">&nbsp;</p>
                             {{!-- {{Post.name}}</p> --}}
+=======
+                        <p class="small mb-0 ms-2 custom-color-title">&nbsp;
+                            {{Post.user.username}}</p>
+>>>>>>> main
                     </div>
                     <div class="d-flex flex-row align-items-center">
                         <p class="small text-muted mb-0">{{format_date
@@ -58,28 +68,40 @@
                     </div>
                 </div>
                 <hr />
-
-                <h5 class="py-2 custom-color-title">{{Post.title}}</h5>
+                {{! post title and content }}
+                <h5 class="custom-color-title">{{Post.title}}</h5>
                 <p class="card-text text-justify custom-color-text">{{Post.content}}</p>
                 <div class="card-text text-justify">
                     <div class="justify-content-center">
-                        <img src="{{Post.image_link}}" alt="" class="img-fluid mb-2" />
+                        <img src="{{Post.image_link}}" alt="" class="img-fluid" />
                     </div>
                 </div>
-                <div style="height: 60px;" class="reaction-container">
+
+                {{! emoji reaction }}
+                <div style="height: 20px;" class="reaction-container">
                     <!-- container div for reaction system -->
                     <style scoped>
                         @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
                         @import '/css/style.css';
                         @import '/css/reaction.css';
                     </style>
+<<<<<<< HEAD
                     <span class="reaction-btn"> <!-- Default like button -->
                         {{!-- <span class="reaction-btn-emo like-btn-default"></span> --}}
                         <!-- Default like button emotion-->
                         <img class="default-like-button" src="/images/reactions_like.png">&nbsp;<span
                             class="reaction-text">Like</span>
+=======
+                    <span class="reaction-btn">
+                        <!-- Default like button -->
+                        {{! <span class="reaction-btn-emo like-btn-default"></span>
+                        <!-- Default like button emotion--> }}
+                        <img class="default-like-button" src="/images/reactions_like.png" />&nbsp;<span
+                            class="">Like</span>
+>>>>>>> main
                         <!-- Default like button text,(Like, wow, sad..) default:Like  -->
-                        <ul class="emojies-box"> <!-- Reaction buttons container-->
+                        <ul class="emojies-box">
+                            <!-- Reaction buttons container-->
                             <li class="emoji emo-like" data-reaction="Like"></li>
                             <li class="emoji emo-love" data-reaction="Love"></li>
                             <li class="emoji emo-haha" data-reaction="HaHa"></li>
@@ -88,16 +110,17 @@
                             <li class="emoji emo-angry" data-reaction="Angry"></li>
                         </ul>
                     </span>
-                    {{!-- <div class="like-stat"> <!-- Like statistic container-->
+                    {{! <div class="like-stat"> <!-- Like statistic container-->
                         <span class="like-emo"> <!-- like emotions container -->
                             <!-- given emotions like, wow, sad  -->
                         </span>
-                    </div> --}}
+                    </div> }}
                 </div>
 
+                {{! view comments }}
                 {{#if Post.comments}}
                 {{#each Post.comments as |com|}}
-                <div class="card p-2 my-4 custom-border">
+                <div class="card p-2 my-3 custom-border">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div class="d-flex flex-row align-items-center">
@@ -117,9 +140,7 @@
                 </div>
                 {{/each}}
                 {{else}}
-
                 {{/if}}
-            </div>
 
 
             <hr>
@@ -143,15 +164,30 @@
                     <div>
                         <button class="btn btn-primary ms-5" id="comment_button{{Post.id}} {{Post.id}}"
                             type="button">Comment</button>
+                {{! add a comment }}
+                <div class="bg-white card border-0 pt-5">
+                    {{! <style scoped>
+                        @import '/css/commentsstyle.css';
+                        @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css");
+                    </style>
+                    }}
+                    <div class="d-flex flex-row ">
+                        <img class="rounded-circle mr-2 my-auto" src="https://pic.onlinewebfonts.com/svg/img_569204.png"
+                            width="25" height="25" />
+                        <div class="flex-grow-1">
+                            <input type="text" class="form-control mx-0 my-2" id="comment_entry{{Post.id}}"
+                                placeholder="Add comment" />
+                        </div>
+                    </div>
+                    <div class="text-center m-1">
+                        <button class="border-0 py-2 px-3 custom-button rounded-lg"
+                            id="comment_button{{Post.id}} {{Post.id}}" type="button">Comment</button>
                     </div>
                 </div>
             </div>
         </div>
         {{/each}}
     </div>
-</div>
-</div>
-</div>
 </div>
 {{else}}
 <a href="/login">You must login first to view this page</a>
