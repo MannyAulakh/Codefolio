@@ -31,7 +31,7 @@ const newPost = async (event) => {
 const newComment = async (button) => {
   event.preventDefault();
 
-  const content = $(event.target).siblings(".form-control").val().trim();
+  const content = $(button).parent().parent().siblings().children(".form-control").val().trim();
 
   // const content = await document.querySelector('#comment_entry').value.trim();
   const ids = button.id;
