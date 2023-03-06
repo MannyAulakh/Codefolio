@@ -76,12 +76,11 @@
                         @import '/css/style.css';
                         @import '/css/reaction.css';
                     </style>
-                    <span class="reaction-btn">
-                        <!-- Default like button -->
-                        {{! <span class="reaction-btn-emo like-btn-default"></span>
-                        <!-- Default like button emotion--> }}
-                        <img class="default-like-button" src="/images/reactions_like.png" />&nbsp;<span
-                            class="">Like</span>
+                    <span class="reaction-btn"> <!-- Default like button -->
+                        {{!-- <span class="reaction-btn-emo like-btn-default"></span> --}}
+                        <!-- Default like button emotion-->
+                        <img class="default-like-button" src="/images/reactions_like.png">&nbsp;<span
+                            class="reaction-text">Like</span>
                         <!-- Default like button text,(Like, wow, sad..) default:Like  -->
                         <ul class="emojies-box">
                             <!-- Reaction buttons container-->
@@ -95,8 +94,7 @@
                     </span>
                     {{! <div class="like-stat"> <!-- Like statistic container-->
                         <span class="like-emo"> <!-- like emotions container -->
-                            <span class="like-btn-like"></span>
-                            <!-- given emotions like, wow, sad (default:Like) -->
+                            <!-- given emotions like, wow, sad  -->
                         </span>
                     </div> }}
                 </div>
@@ -126,34 +124,60 @@
                 {{else}}
                 {{/if}}
 
-                {{! add a comment }}
-                <div class="bg-white card border-0 pt-5">
-                    {{! <style scoped>
-                        @import '/css/commentsstyle.css';
-                        @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css");
-                    </style>
-                    }}
-                    <div class="d-flex flex-row ">
-                        <img class="rounded-circle mr-2 my-auto" src="https://pic.onlinewebfonts.com/svg/img_569204.png"
-                            width="25" height="25" />
-                        <div class="flex-grow-1">
-                            <input type="text" class="form-control mx-0 my-2" id="comment_entry{{Post.id}}"
-                                placeholder="Add comment" />
+
+                <hr>
+
+                <div class="card p-2 my-4 custom-border">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between my-2">
+                            <div class="d-flex flex-row align-items-center">
+                                <img src="https://pic.onlinewebfonts.com/svg/img_569204.png" alt="avatar" width="25"
+                                    height="25" />
+                            </div>
+                            <div class="d-flex flex-row align-items-center">
+                            </div>
+                        </div>
+                        <input type="text" class="form-control mr-3" id="comment_entry{{Post.id}}"
+                            placeholder="Add comment">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div></div>
+                        <div></div>
+                        <div>
+                            <button class="border-0 py-2 px-3 custom-button rounded-lg" id="comment_button{{Post.id}} {{Post.id}}"
+                                type="button">Comment</button>
                         </div>
                     </div>
-                    <div class="text-center m-1">
-                        <button class="border-0 py-2 px-3 custom-button rounded-lg"
-                            id="comment_button{{Post.id}} {{Post.id}}" type="button">Comment</button>
-                    </div>
+                    
+                    {{! add a comment }}
+                    {{!-- <div class="bg-white card border-0 pt-5">
+                        {{! <style scoped>
+                            @import '/css/commentsstyle.css';
+                            @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css");
+                        </style>
+                        }}
+                        <div class="d-flex flex-row ">
+                            <img class="rounded-circle mr-2 my-auto"
+                                src="https://pic.onlinewebfonts.com/svg/img_569204.png" width="25" height="25" />
+                            <div class="flex-grow-1">
+                                <input type="text" class="form-control mx-0 my-2" id="comment_entry{{Post.id}}"
+                                    placeholder="Add comment" />
+                            </div>
+                        </div>
+                        <div class="text-center m-1">
+                            <button class="" id="comment_button{{Post.id}} {{Post.id}}" type="button">Comment</button>
+                        </div>
+                    </div> --}}
+
                 </div>
             </div>
         </div>
         {{/each}}
     </div>
+    {{else}}
+    <a href="/login">You must login first to view this page</a>
+    {{/if}}
 </div>
-{{else}}
-<a href="/login">You must login first to view this page</a>
-{{/if}}
-
-<script src="./js/homepage.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/homepage.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/reaction.js"></script>

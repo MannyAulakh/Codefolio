@@ -29,14 +29,14 @@ const newPost = async (event) => {
 
 // ------------ post function to create new comment------------
 const newComment = async (button) => {
+  event.preventDefault();
+
+  const content = $(button).parent().parent().siblings().children(".form-control").val().trim();
 
   const ids = button.id;
   console.log(ids);
   const post_id = ids.split(" ")[1];
   console.log(post_id);
-
-  const content = await document.querySelector(`#comment_entry${post_id}`).value.trim();
-  // const content = $(event.target).siblings(".form-control").val().trim();
 
   console.log(JSON.stringify({ content, post_id }));
 
